@@ -1,0 +1,27 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "msg",
+      "type": "queueTrigger",
+      "direction": "in",
+      "queueName": "images",
+      "connection": "customserverless01_STORAGE"
+    },
+    {
+      "name": "inputblob",
+      "type": "blob",
+      "dataType": "binary",
+      "path": "sampleuploads/{queueTrigger}",
+      "connection": "customserverless01_STORAGE",
+      "direction": "in"
+    },
+    {
+      "name": "outputblob",
+      "type": "blob",
+      "path": "thumbnails/{queueTrigger}",
+      "connection": "customserverless01_STORAGE",
+      "direction": "out"
+    }
+  ]
+}
